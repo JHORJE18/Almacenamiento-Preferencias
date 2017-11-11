@@ -69,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
         editor.commit();
 
         Toast.makeText(getBaseContext(),"Se han Guardado las preferencias",Toast.LENGTH_LONG).show();
+        cargarPreferencias();
     }
 
     //Cargar preferencias
@@ -96,6 +97,8 @@ public class MainActivity extends AppCompatActivity {
 
         editor.clear().commit();
         Toast.makeText(getBaseContext(),"Preferencias eliminadas",Toast.LENGTH_LONG).show();
+
+        cargarPreferencias();
     }
 
     //Clics botones
@@ -117,6 +120,9 @@ public class MainActivity extends AppCompatActivity {
                 guardarPreferencias();
                 lyCrear.setVisibility(View.GONE);
                 panelGuardar = true;
+                break;
+            case R.id.btnEliminar:
+                eliminarPreferencias();
                 break;
         }
     }
